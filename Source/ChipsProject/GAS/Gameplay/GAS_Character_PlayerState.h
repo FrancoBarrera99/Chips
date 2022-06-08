@@ -5,20 +5,20 @@
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
 #include "GameFramework/PlayerState.h"
-#include "GAS_CharacterPlayerState.generated.h"
+#include "GAS_Character_PlayerState.generated.h"
 
 /**
  * This player state is created to hold the ASC and the AttributeSet for a Character
  * It could be use both for AI Controlled or Player Controlled Characters
  */
 UCLASS()
-class CHIPSPROJECT_API AGAS_CharacterPlayerState : public APlayerState
+class CHIPSPROJECT_API AGAS_Character_PlayerState : public APlayerState
 {
 	GENERATED_BODY()
 
 public:
 
-	AGAS_CharacterPlayerState();
+	AGAS_Character_PlayerState();
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category="Abilities")
 	UAbilitySystemComponent* AbilitySystemComponent;

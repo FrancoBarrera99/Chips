@@ -3,7 +3,7 @@
 
 #include "GAS/Character/GAS_Character.h"
 
-#include "GAS/GAS_CharacterPlayerState.h"
+#include "GAS/GAS_Character_PlayerState.h"
 
 // Sets default values
 AGAS_Character::AGAS_Character()
@@ -29,11 +29,11 @@ void AGAS_Character::PossessedBy(AController* NewController)
 		return;
 	}
 
-	AGAS_CharacterPlayerState* GASCharacterPlayerState = Cast<AGAS_CharacterPlayerState>(GetPlayerState());
+	AGAS_Character_PlayerState* GASCharacterPlayerState = Cast<AGAS_Character_PlayerState>(GetPlayerState());
 
 	if(GASCharacterPlayerState)
 	{
-		AbilitySystemComponent = Cast<AGAS_CharacterPlayerState>(GetPlayerState())->AbilitySystemComponent;
+		AbilitySystemComponent = Cast<AGAS_Character_PlayerState>(GetPlayerState())->AbilitySystemComponent;
 
 		/* Set Owner and Avatar Actor for ASC */
 		AbilitySystemComponent->InitAbilityActorInfo(GetPlayerState(), this);
@@ -44,11 +44,11 @@ void AGAS_Character::OnRep_PlayerState()
 {
 	Super::OnRep_PlayerState();
 
-	AGAS_CharacterPlayerState* GASCharacterPlayerState = Cast<AGAS_CharacterPlayerState>(GetPlayerState());
+	AGAS_Character_PlayerState* GASCharacterPlayerState = Cast<AGAS_Character_PlayerState>(GetPlayerState());
 
 	if(GASCharacterPlayerState)
 	{
-		AbilitySystemComponent = Cast<AGAS_CharacterPlayerState>(GetPlayerState())->AbilitySystemComponent;
+		AbilitySystemComponent = Cast<AGAS_Character_PlayerState>(GetPlayerState())->AbilitySystemComponent;
 
 		/* Set Owner and Avatar Actor for ASC */
 		AbilitySystemComponent->InitAbilityActorInfo(GetPlayerState(), this);

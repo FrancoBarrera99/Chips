@@ -1,22 +1,21 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "GAS/GAS_CharacterPlayerState.h"
+#include "GAS/Gameplay/GAS_Character_PlayerState.h"
+#include "GAS/Attributes/GAS_CharacterAttributeSet.h"
 
-#include "Attributes/GAS_CharacterAttributeSet.h"
-
-AGAS_CharacterPlayerState::AGAS_CharacterPlayerState()
+AGAS_Character_PlayerState::AGAS_Character_PlayerState()
 {
 	/* Create ASC */
 	AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>("AbilitySystemComponent");
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
-	/* Create AttributeSet */
+	/* Create CharacterAttributeSet */
 	AttributeSet = CreateDefaultSubobject<UGAS_CharacterAttributeSet>("AttributeSet");
 }
 
-void AGAS_CharacterPlayerState::GrantAbility(TSubclassOf<UGameplayAbility> AbilityClass, int32 Level, int32 InputCode)
+void AGAS_Character_PlayerState::GrantAbility(TSubclassOf<UGameplayAbility> AbilityClass, int32 Level, int32 InputCode)
 {
 	if(AbilitySystemComponent && HasAuthority() && IsValid(AbilityClass))
 	{
@@ -35,7 +34,7 @@ void AGAS_CharacterPlayerState::GrantAbility(TSubclassOf<UGameplayAbility> Abili
 	}
 }
 
-void AGAS_CharacterPlayerState::ActivateAbility(int32 InputCode)
+void AGAS_Character_PlayerState::ActivateAbility(int32 InputCode)
 {
 	if(AbilitySystemComponent)
 	{

@@ -17,8 +17,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Source/ChipsProject/GAS/Character/GAS_Character.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ChipsProject/GAS/Character/GAS_Character.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ChipsProject/GAS/GAS_CharacterPlayerState.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ChipsProject/GAS/GAS_CharacterPlayerState.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ChipsProject/GAS/Gameplay/GAS_Character_PlayerState.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ChipsProject/GAS/Gameplay/GAS_Gameplay_AIController.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ChipsProject/GAS/Gameplay/GAS_Gameplay_AIController.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -162,7 +163,13 @@
       <workItem from="1654460345395" duration="4801000" />
       <workItem from="1654473644176" duration="1082000" />
       <workItem from="1654474973035" duration="6686000" />
-      <workItem from="1654554371065" duration="1589000" />
+      <workItem from="1654554371065" duration="2857000" />
+      <workItem from="1654598495122" duration="756000" />
+      <workItem from="1654639671783" duration="1947000" />
+      <workItem from="1654641962197" duration="1708000" />
+      <workItem from="1654683354900" duration="5180000" />
+      <workItem from="1654693733085" duration="368000" />
+      <workItem from="1654694290019" duration="3143000" />
     </task>
     <servers />
   </component>
