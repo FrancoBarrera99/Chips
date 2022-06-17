@@ -70,18 +70,5 @@ public:
 	UFUNCTION()
 	virtual void OnRep_AttackSpeed(const FGameplayAttributeData& OldAttackSpeed);
 
-	UPROPERTY(BlueprintReadOnly, Category = "Attributes", ReplicatedUsing = OnRep_Magnet)
-	FGameplayAttributeData Magnet;
-	ATTRIBUTE_ACCESSORS(UGAS_CharacterAttributeSet, Magnet);
-
-	UFUNCTION()
-	virtual void OnRep_Magnet(const FGameplayAttributeData& OldMagnet);
-
-	UPROPERTY(BlueprintReadOnly, Category = "Attributes", ReplicatedUsing = OnRep_Greed)
-	FGameplayAttributeData Greed;
-	ATTRIBUTE_ACCESSORS(UGAS_CharacterAttributeSet, Greed);
-
-	UFUNCTION()
-	virtual void OnRep_Greed(const FGameplayAttributeData& OldGreed);
 	
 };
