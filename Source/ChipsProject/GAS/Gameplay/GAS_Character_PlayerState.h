@@ -18,7 +18,7 @@ class CHIPSPROJECT_API AGAS_Character_PlayerState : public APlayerState
 
 public:
 
-	AGAS_Character_PlayerState();
+	AGAS_Character_PlayerState(const FObjectInitializer& ObjectInitializer);
 
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category="Abilities")
 	UAbilitySystemComponent* AbilitySystemComponent;

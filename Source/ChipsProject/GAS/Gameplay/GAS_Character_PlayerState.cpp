@@ -4,7 +4,7 @@
 #include "GAS/Gameplay/GAS_Character_PlayerState.h"
 #include "GAS/Attributes/GAS_CharacterAttributeSet.h"
 
-AGAS_Character_PlayerState::AGAS_Character_PlayerState()
+AGAS_Character_PlayerState::AGAS_Character_PlayerState(const FObjectInitializer& ObjectInitializer)
 {
 	/* Create ASC */
 	AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>("AbilitySystemComponent");

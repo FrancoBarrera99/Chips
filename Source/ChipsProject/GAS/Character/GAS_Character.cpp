@@ -3,7 +3,7 @@
 
 #include "GAS/Character/GAS_Character.h"
 
-#include "GAS/GAS_Character_PlayerState.h"
+#include "GAS/Gameplay/GAS_Character_PlayerState.h"
 
 // Sets default values
 AGAS_Character::AGAS_Character()
