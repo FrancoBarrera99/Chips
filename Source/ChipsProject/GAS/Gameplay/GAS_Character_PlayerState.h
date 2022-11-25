@@ -52,4 +52,8 @@ public:
 	/** Called to use a registered Ability */
 	UFUNCTION(BlueprintCallable, Category="Abilities")
 	void ActivateAbility(EAbilityInputType InputType);
+
+	/** Called to use a registered Ability by tag */
+	UFUNCTION(BlueprintCallable, Category="Abilities")
+	void ActivateAbilitiesByTag(FGameplayTagContainer GameplayTagContainer);
 };

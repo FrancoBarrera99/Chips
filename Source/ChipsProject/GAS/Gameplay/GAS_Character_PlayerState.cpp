@@ -41,3 +41,11 @@ void AGAS_Character_PlayerState::ActivateAbility(EAbilityInputType InputType)
 		AbilitySystemComponent->AbilityLocalInputPressed((int32)InputType);
 	}
 }
+
+void AGAS_Character_PlayerState::ActivateAbilitiesByTag(FGameplayTagContainer GameplayTagContainer)
+{
+	if(AbilitySystemComponent)
+	{
+		AbilitySystemComponent->TryActivateAbilitiesByTag(GameplayTagContainer);
+	}
+}
