@@ -34,10 +34,10 @@ void AGAS_Character_PlayerState::GrantAbility(TSubclassOf<UGameplayAbility> Abil
 	}
 }
 
-void AGAS_Character_PlayerState::ActivateAbility(int32 InputCode)
+void AGAS_Character_PlayerState::ActivateAbility(EAbilityInputType InputType)
 {
 	if(AbilitySystemComponent)
 	{
-		AbilitySystemComponent->AbilityLocalInputPressed(InputCode);
+		AbilitySystemComponent->AbilityLocalInputPressed((int32)InputType);
 	}
 }

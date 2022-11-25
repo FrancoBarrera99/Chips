@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+	// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "GAS/Character/GAS_Character.h"
@@ -17,6 +17,8 @@ AGAS_Character::AGAS_Character()
 void AGAS_Character::BeginPlay()
 {
 	Super::BeginPlay();
+
+	InitializeDefaultAbilities();
 	
 }
 
@@ -29,9 +31,7 @@ void AGAS_Character::PossessedBy(AController* NewController)
 		return;
 	}
 
-	AGAS_Character_PlayerState* GASCharacterPlayerState = Cast<AGAS_Character_PlayerState>(GetPlayerState());
-
-	if(GASCharacterPlayerState)
+	if(Cast<AGAS_Character_PlayerState>(GetPlayerState()))
 	{
 		AbilitySystemComponent = Cast<AGAS_Character_PlayerState>(GetPlayerState())->AbilitySystemComponent;
 
@@ -44,9 +44,7 @@ void AGAS_Character::OnRep_PlayerState()
 {
 	Super::OnRep_PlayerState();
 
-	AGAS_Character_PlayerState* GASCharacterPlayerState = Cast<AGAS_Character_PlayerState>(GetPlayerState());
-
-	if(GASCharacterPlayerState)
+	if(Cast<AGAS_Character_PlayerState>(GetPlayerState()))
 	{
 		AbilitySystemComponent = Cast<AGAS_Character_PlayerState>(GetPlayerState())->AbilitySystemComponent;
 
@@ -67,5 +65,26 @@ void AGAS_Character::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void AGAS_Character::InitializeDefaultAbilities()
+{
+	if(GetLocalRole() != ROLE_Authority)
+	{
+		return;
+	}
+
+	AGAS_Character_PlayerState* CharacterPS = Cast<AGAS_Character_PlayerState>(GetPlayerState());
+	
+	if(CharacterPS->IsValidLowLevel())
+	{
+		const int size = DefaultAbilities.Num();
+		
+		for(int i = 0; i < size; i++)
+		{
+			CharacterPS->GrantAbility(DefaultAbilities[i], 0, i);
+		}
+	}
+	
 }
 

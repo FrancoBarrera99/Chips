@@ -7,6 +7,19 @@
 #include "GameFramework/PlayerState.h"
 #include "GAS_Character_PlayerState.generated.h"
 
+
+UENUM(BlueprintType)
+enum EAbilityInputType
+{
+	MoveForward			UMETA(DisplayName="MoveForward"),
+	MoveBackward		UMETA(DisplayName="MoveBackward"),
+	MoveRight			UMETA(DisplayName="MoveRight"),
+	MoveLeft			UMETA(DisplayName="MoveLeft"),
+	PrimaryAttack		UMETA(DisplayName="PrimaryAttack"),
+	SecondaryAttack		UMETA(DisplayName="SecondaryAttack")
+};
+
+
 /**
  * This player state is created to hold the ASC and the AttributeSet for a Character
  * It could be use both for AI Controlled or Player Controlled Characters
@@ -38,5 +51,5 @@ public:
 
 	/** Called to use a registered Ability */
 	UFUNCTION(BlueprintCallable, Category="Abilities")
-	void ActivateAbility(int32 InputCode);
+	void ActivateAbility(EAbilityInputType InputType);
 };
